@@ -1,0 +1,19 @@
+package genericUtility;
+
+import java.io.FileNotFoundException;
+
+public class ReadDataFromJSON {
+
+	@Test
+	public Object radJsonData(String key) throws Throwable {
+		FileReader fr = new FileReader(".\\src\\test\\resources\\jsonData.json"); //path
+		JSONParser jp = new JSONPerser();
+		
+		Object javaObj = jp.parse(fr);
+
+		HashMap hm = (HashMap) javaObj;
+		
+		return hm.get(key);
+	}
+
+}
